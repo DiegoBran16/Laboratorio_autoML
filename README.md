@@ -40,5 +40,10 @@ Para esto se define un archivo denominado *requirements.txt* este contiene las d
 - **pyyaml:** Para leer y procesar el archivo params.yaml.
 
 #### 2. Definir los parametros en el archivo params.yaml
-Este archivo contiene las configuraciones de las transformaciones a realizar así como la paremtrización de los modelos 
+Este archivo contiene las configuraciones del pipeline de forma centralizada, es de gran utilidad puesto que permite que DVC y los scripts accedan a los parametros sin necesidad de modificar el codigo
+
+El archivo contiene 4 secciones principales las cuales contienen la siguiente estructura: 
+1. <u>General</u>: en esta sección se define la configuración general como la ruta al daset, la columna objetivo, el tipo de problma y la distribución de la división entre train y test. 
+2. <u>Preprocess</u>: en esta sección se define el la dinamica del preprocesamiento, se enlistan columnas numericas y categoricas y el tipo de trnsformación que se realizara sobre estas.
+3. <u>Models</u>:
 

@@ -5,7 +5,7 @@ general:
   target_column: "target"            # Nombre de la columna objetivo
   problem_type: "regression"         # Tipo de problema: "regression" o "classification"
   split_ratio: 0.2                   # Porcentaje de datos para el conjunto de prueba (20%)
-  random_state: 42                   # Semilla para reproducibilidad
+  random_state: 42                   # Seed para reproducibilidad
 
 # Configuración dinámica de preprocesamiento
 preprocess:
