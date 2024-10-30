@@ -1,0 +1,45 @@
+
+# Configuración general
+general:
+  dataset_path: "data/data.csv"      # Ruta al dataset
+  target_column: "target"            # Nombre de la columna objetivo
+  problem_type: "regression"         # Tipo de problema: "regression" o "classification"
+  split_ratio: 0.2                   # Porcentaje de datos para el conjunto de prueba (20%)
+  random_state: 42                   # Semilla para reproducibilidad
+
+# Configuración dinámica de preprocesamiento
+preprocess:
+  numerical:                         # Lista de columnas numéricas; se actualizará de forma adaptable en los scripts
+    - num_column1
+    - num_column2
+  categorical:                       # Lista de columnas categóricas; adaptable en los scripts
+    - cat_column1
+  scaling: "StandardScaler"          # Tipo de escalado: "StandardScaler", "MinMaxScaler", etc.
+  encoding: "OneHotEncoder"          # Tipo de codificación para variables categóricas: "OneHotEncoder", "LabelEncoder", etc.
+
+# Definición de modelos y configuraciones de hiperparámetros para clasificación y regresión
+models:
+  regression:
+    LinearRegression: {}             # Sin hiperparámetros, entrenando con los defaults
+    RandomForest:
+      n_estimators: [100, 200, 300]
+      max_depth: [5, 10, 15, 20]
+    GradientBoosting:
+      n_estimators: [100, 200, 300]
+      learning_rate: [0.01, 0.05, 0.1, 0.2]
+  classification:
+    LogisticRegression:              # Ejemplo de modelo para problemas de clasificación
+      penalty: ["l2"]
+      C: [0.1, 1, 10]
+    RandomForestClassifier:
+      n_estimators: [100, 200, 300]
+      max_depth: [5, 10, 15, 20]
+    GradientBoostingClassifier:
+      n_estimators: [100, 200, 300]
+      learning_rate: [0.01, 0.05, 0.1, 0.2]
+
+# Configuración de Optuna para optimización de hiperparámetros
+optuna:
+  n_trials: 50                       # Número de iteraciones o configuraciones a probar en la búsqueda
+  direction: "minimize"              # Objetivo de la optimización; "minimize" para regresión (MSE) y "maximize" para clasificación (accuracy)
+  study_name: "auto_ml_optimization" # Nombre del estudio de Optuna
