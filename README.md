@@ -45,5 +45,14 @@ Este archivo contiene las configuraciones del pipeline de forma centralizada, es
 El archivo contiene 4 secciones principales las cuales contienen la siguiente estructura: 
 1. <u>General</u>: en esta sección se define la configuración general como la ruta al daset, la columna objetivo, el tipo de problma y la distribución de la división entre train y test. 
 2. <u>Preprocess</u>: en esta sección se define el la dinamica del preprocesamiento, se enlistan columnas numericas y categoricas y el tipo de trnsformación que se realizara sobre estas.
-3. <u>Models</u>:
+3. <u>Models</u>: en esta sección se definen los hiperparametros ajustables de cada uno de los modelos definidos
+4. <u>Optuna</u>: en esta sección se definen los hiperparametros de la optimización de optuna
 
+#### 3 Implementación de los scripts 
+
+1. **Script de Preparación de Datos(src/prepare_data.py):** Este script lee el archivo params.yaml para identificar las columnas numéricas y categóricas. Aplicas el escalador y codificador definidos en el archivo antes mencionado y divide el dataset en entrenamiento y prueba, posteroirmente guarda estos conjuntos en archivos csv.
+2. **Scipt de Entrenamiento(src/train_model.py):** Este script es el enargado de seleccionar los modelos segun el prametro *problem_type* definido en el archivo *params.yaml*. Adicionalmente se encarga de ajustar los hiperparámetros definidos en params.yaml. 
+3. **Script de Evaluación del modelo (src/evaluate_model.py):** Este script evalua el rednimiento del modelo entrenado según el tipo de problema, calculando las métricas relevantes y guarda estos resultados en un archivo csv (metrics/results.csv).
+4. **Script de Optimización de optuna (srv/train_model_optuna.py):** Este scipr es el encargadod e configurar y ejecutar optuna para la búsqueda de hiperparámetros óptimos. 
+
+#### 4. Ejecutar el Pipeline 
