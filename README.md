@@ -89,3 +89,9 @@ git add models/ metrics/ data/X_train.csv data/X_test.csv data/y_train.csv data/
 git commit -m "Ejecutar pipeline completo con DVC y optimización con Optuna"
 
 ```
+
+6. **Verificar Resultados:**Los resultados de las métricas y el mejor modelo optimizado se guardarán en:
+
+- **metrics/results.csv:** Contiene las métricas de rendimiento de los modelos entrenados.
+- **metrics/optuna_study.pkl:** Almacena el estudio completo de Optuna, incluyendo el historial de optimización.
+- **models/best_model_optuna.pkl:** El mejor modelo optimizado por Optuna.
