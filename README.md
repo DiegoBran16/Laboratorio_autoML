@@ -9,21 +9,23 @@ La estructura que presenta el laboratorio es la siguiente:
 ```
 laboratorio_autoML/
 ├── data/
-│   └── data.csv                # Dataset de entrada
+│   └── data.csv                     # Dataset de entrada
 ├── src/
-│   ├── prepare_data.py         # Script para la preparación de datos (exploración y preprocesamiento)
-│   ├── train_model.py          # Script para el entrenamiento de modelos
-│   ├── evaluate_model.py       # Script para la evaluación de modelos y obtención de métricas
-│   ├── train_model_optuna.py   # Script de entrenamiento con optimización de Optuna
-├── models/                     # Directorio para guardar modelos entrenados
-│   ├── best_model_optuna.pkl   # Archivo de modelo optimizado con Optuna
-├── metrics/                    # Directorio para guardar métricas y resultados
-│   ├── results.csv             # Archivo con resultados de métricas de los modelos
-│   └── optuna_study.pkl        # Archivo con el estudio completo de Optuna
-├── params.yaml                 # Archivo de configuración de parámetros adaptable a cualquier dataset
-├── dvc.yaml                    # Archivo de configuración del pipeline en DVC
-├── requirements.txt            # Dependencias del proyecto
-└── README.md                   # Instrucciones para ejecutar el proyecto
+│   ├── prepare_data.py              # Script para la preparación de datos (exploración y preprocesamiento)
+│   ├── train_model.py               # Script para el entrenamiento de modelos
+│   ├── evaluate_model.py            # Script para la evaluación de modelos y obtención de métricas
+│   ├── train_model_optuna.py        # Script de entrenamiento con optimización de Optuna
+├── models/                          # Directorio para guardar modelos dentro de el se segmentarn por entrenamientos y optimizaciones
+|   |── train_model/                 # Directorio para guardar los modelos entrenados
+│   ├── optuna/                      # Directorio para almacenar el modelo optimizado de optuna
+|       |── best_model_optuna.pkl    # Archivo de modelo optimizado con Optuna
+├── metrics/                         # Directorio para guardar métricas y resultados
+│   ├── results.csv                  # Archivo con resultados de métricas de los modelos
+│   └── optuna_study.pkl             # Archivo con el estudio completo de Optuna
+├── params.yaml                      # Archivo de configuración de parámetros adaptable a cualquier dataset
+├── dvc.yaml                         # Archivo de configuración del pipeline en DVC
+├── requirements.txt                 # Dependencias del proyecto
+└── README.md                        # Instrucciones para ejecutar el proyecto
         # Documentación e instrucciones para reproducir el laboratorio
 ```
 

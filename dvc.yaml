@@ -19,7 +19,7 @@ stages:
       - data/y_train.csv
       - params.yaml
     outs:
-      - models/
+      - models/train_model/
 
   evaluate_model:
     cmd: python src/evaluate_model.py
@@ -41,5 +41,5 @@ stages:
       - data/y_test.csv
       - params.yaml
     outs:
-      - models/best_model_optuna.pkl
+      - models/optuna/best_model_optuna.pkl
       - metrics/optuna_study.pkl
