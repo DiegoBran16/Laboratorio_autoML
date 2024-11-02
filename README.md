@@ -66,7 +66,7 @@ dvc init
 2. **Agregar el dataset a DVC:** El dataset debe ser rastreado por DVC para facilitar la gestión de versiones y reproducibilidad 
 ```
 dvc add data/data.csv
-git add data/data.csv.dvc .gitignore
+git add data/.gitignore data/data.csv.dvc
 ```
 3. **Rastrear el Pipeline en DVC y el archivo de parametros:** 
 ```
@@ -95,3 +95,4 @@ git commit -m "Ejecutar pipeline completo con DVC y optimización con Optuna"
 - **metrics/results.csv:** Contiene las métricas de rendimiento de los modelos entrenados.
 - **metrics/optuna_study.pkl:** Almacena el estudio completo de Optuna, incluyendo el historial de optimización.
 - **models/best_model_optuna.pkl:** El mejor modelo optimizado por Optuna.
+

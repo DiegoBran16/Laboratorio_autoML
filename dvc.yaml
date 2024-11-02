@@ -1,0 +1,45 @@
+stages:
+  prepare_data:
+    cmd: python src/prepare_data.py
+    deps:
+      - src/prepare_data.py
+      - data/data.csv
+      - params.yaml
+    outs:
+      - data/X_train.csv
+      - data/X_test.csv
+      - data/y_train.csv
+      - data/y_test.csv
+
+  train_model:
+    cmd: python src/train_model.py
+    deps:
+      - src/train_model.py
+      - data/X_train.csv
+      - data/y_train.csv
+      - params.yaml
+    outs:
+      - models/
+
+  evaluate_model:
+    cmd: python src/evaluate_model.py
+    deps:
+      - src/evaluate_model.py
+      - data/X_test.csv
+      - data/y_test.csv
+      - models/
+    outs:
+      - metrics/results.csv
+
+  train_model_optuna:
+    cmd: python src/train_model_optuna.py
+    deps:
+      - src/train_model_optuna.py
+      - data/X_train.csv
+      - data/y_train.csv
+      - data/X_test.csv
+      - data/y_test.csv
+      - params.yaml
+    outs:
+      - models/best_model_optuna.pkl
+      - metrics/optuna_study.pkl
