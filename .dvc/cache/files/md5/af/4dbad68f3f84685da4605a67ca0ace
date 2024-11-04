@@ -1,0 +1,2 @@
+Model,Evaluation_MSE,Evaluation_MAE,Evaluation_R2,MSE,model,iterations,learning_rate,depth
+CatBoost,1722804103560.763,969212.6509480348,0.6591591333008945,1722804103560.763,CatBoost,225,0.0848858849960367,5

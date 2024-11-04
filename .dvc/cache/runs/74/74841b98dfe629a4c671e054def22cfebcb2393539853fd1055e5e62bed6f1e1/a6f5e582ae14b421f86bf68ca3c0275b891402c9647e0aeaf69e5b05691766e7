@@ -1,0 +1,35 @@
+cmd: python src/train_gradient_boosting_optuna.py
+deps:
+- path: data/X_test.csv
+  hash: md5
+  md5: 99000679fb3c8b7cf4f5898437efde3d
+  size: 17360
+- path: data/X_train.csv
+  hash: md5
+  md5: 904b4c4ce46c99a0c94b72627091db3b
+  size: 69369
+- path: data/y_test.csv
+  hash: md5
+  md5: f2beb563272525bcd1390a2523355ebf
+  size: 881
+- path: data/y_train.csv
+  hash: md5
+  md5: a24b4cd1901a6add2c66f4dad6811bba
+  size: 3499
+- path: params.yaml
+  hash: md5
+  md5: bdd84f2a5d9fd8182a54a3acead7ee4a
+  size: 1731
+- path: src/train_gradient_boosting_optuna.py
+  hash: md5
+  md5: fcd2f799fc4d605786abfa597132df7b
+  size: 2041
+outs:
+- path: metrics/gb_results.csv
+  hash: md5
+  md5: fd1cd4e2179d0f6cddf32a576d286075
+  size: 107
+- path: models/optuna/best_gb_model_optuna.pkl
+  hash: md5
+  md5: da967393679a503e496ff25f565932ad
+  size: 57052

@@ -1,0 +1,2 @@
+Model,Evaluation_MSE,Evaluation_MAE,Evaluation_R2,MSE,model,fit_intercept,alpha
+LinearRegression,1754436761499.0828,970076.407146784,0.6529009043325462,1754436761499.0828,LinearRegression,True,0.05

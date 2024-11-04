@@ -1,0 +1,24 @@
+cmd: python src/train_model.py
+deps:
+- path: data/X_train.csv
+  hash: md5
+  md5: 904b4c4ce46c99a0c94b72627091db3b
+  size: 69369
+- path: data/y_train.csv
+  hash: md5
+  md5: a24b4cd1901a6add2c66f4dad6811bba
+  size: 3499
+- path: params.yaml
+  hash: md5
+  md5: 06e556bbbbee4ecf56f57a6b0c853e30
+  size: 2180
+- path: src/train_model.py
+  hash: md5
+  md5: 1fd657344fc272671803c9058eafbce5
+  size: 1460
+outs:
+- path: models/train_model/
+  hash: md5
+  md5: 35fed295dc9069017c7f1b4bde01ca1c.dir
+  size: 5623158
+  nfiles: 3

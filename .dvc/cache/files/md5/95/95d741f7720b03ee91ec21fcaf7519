@@ -1,0 +1,2 @@
+Model,MSE,model,fit_intercept,alpha
+LinearRegression,1754554763016.592,LinearRegression,True,0.1

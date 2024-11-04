@@ -1,0 +1,2 @@
+Model,Evaluation_MSE,Evaluation_MAE,Evaluation_R2,MSE,model,n_estimators,max_depth
+RandomForest,1944996457134.3135,1008739.5290519878,0.61520043003951,1944996457134.3132,RandomForest,175,19
