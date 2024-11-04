@@ -1,6 +1,7 @@
 # Laboratorio01 AutoML 
 ### Curso Product Development | Universidad Galileo | Postgrado en Data Science | Cuarto trimestre
 **Elbaorado por**: Diego Fernando Bran  **Carnet:** 24003821
+**GithubRepo**:https://github.com/DiegoBran16/Laboratorio_autoML.git
 
 ## Documentación para la elaboración y reporducción del presente laboratorio
 
