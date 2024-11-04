@@ -1,0 +1,2 @@
+Model,Evaluation_MSE,Evaluation_MAE,Evaluation_R2,MSE,model,n_estimators,learning_rate
+GradientBoosting,1634051511466.4226,929663.9640780382,0.6767180132389583,1634051511466.4226,GradientBoosting,150,0.1350640863527638

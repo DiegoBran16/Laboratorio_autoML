@@ -1,0 +1,35 @@
+cmd: python src/train_random_forest_optuna.py
+deps:
+- path: data/X_test.csv
+  hash: md5
+  md5: 99000679fb3c8b7cf4f5898437efde3d
+  size: 17360
+- path: data/X_train.csv
+  hash: md5
+  md5: 904b4c4ce46c99a0c94b72627091db3b
+  size: 69369
+- path: data/y_test.csv
+  hash: md5
+  md5: f2beb563272525bcd1390a2523355ebf
+  size: 881
+- path: data/y_train.csv
+  hash: md5
+  md5: a24b4cd1901a6add2c66f4dad6811bba
+  size: 3499
+- path: params.yaml
+  hash: md5
+  md5: c346f6aa3af1213c9b4744fcc735dbea
+  size: 1718
+- path: src/train_random_forest_optuna.py
+  hash: md5
+  md5: 8d049e4e9dd94b35ce93ebc4fd73d716
+  size: 1869
+outs:
+- path: metrics/rf_results.csv
+  hash: md5
+  md5: 2ba8b264542974d17c97f204a5e19683
+  size: 68
+- path: models/optuna/best_rf_model_optuna.pkl
+  hash: md5
+  md5: 9690154ef225aaebf11b26f1e2d502e3
+  size: 27665

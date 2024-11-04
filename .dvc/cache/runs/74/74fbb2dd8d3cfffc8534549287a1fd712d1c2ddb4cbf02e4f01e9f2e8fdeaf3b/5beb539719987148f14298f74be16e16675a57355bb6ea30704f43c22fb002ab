@@ -1,0 +1,31 @@
+cmd: python src/prepare_data.py
+deps:
+- path: data/data.csv
+  hash: md5
+  md5: 801f8030dad1df22a53edfdbfa4e80f0
+  size: 29981
+- path: params.yaml
+  hash: md5
+  md5: 57003568335a9d0baa801707e5c83ef3
+  size: 1724
+- path: src/prepare_data.py
+  hash: md5
+  md5: 6409d9a9ef2fca62245faf5375227955
+  size: 1316
+outs:
+- path: data/X_test.csv
+  hash: md5
+  md5: 99000679fb3c8b7cf4f5898437efde3d
+  size: 17360
+- path: data/X_train.csv
+  hash: md5
+  md5: 904b4c4ce46c99a0c94b72627091db3b
+  size: 69369
+- path: data/y_test.csv
+  hash: md5
+  md5: f2beb563272525bcd1390a2523355ebf
+  size: 881
+- path: data/y_train.csv
+  hash: md5
+  md5: a24b4cd1901a6add2c66f4dad6811bba
+  size: 3499

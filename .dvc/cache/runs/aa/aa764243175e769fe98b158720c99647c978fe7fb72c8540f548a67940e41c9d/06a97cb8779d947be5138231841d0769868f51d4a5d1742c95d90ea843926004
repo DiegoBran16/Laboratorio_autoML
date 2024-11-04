@@ -1,0 +1,36 @@
+cmd: python src/train_model_optuna.py
+deps:
+- path: data/X_test.csv
+  hash: md5
+  md5: 99000679fb3c8b7cf4f5898437efde3d
+  size: 17360
+- path: data/X_train.csv
+  hash: md5
+  md5: 904b4c4ce46c99a0c94b72627091db3b
+  size: 69369
+- path: data/y_test.csv
+  hash: md5
+  md5: f2beb563272525bcd1390a2523355ebf
+  size: 881
+- path: data/y_train.csv
+  hash: md5
+  md5: a24b4cd1901a6add2c66f4dad6811bba
+  size: 3499
+- path: params.yaml
+  hash: md5
+  md5: 06e556bbbbee4ecf56f57a6b0c853e30
+  size: 2180
+- path: src/train_model_optuna.py
+  hash: md5
+  md5: 209444532663edf8f2aa6b781fea51e9
+  size: 1837
+outs:
+- path: metrics/optuna_study.pkl
+  hash: md5
+  md5: 0718c35b66c327f5ed2e86dab15a61d2
+  size: 18206
+- path: models/optuna/
+  hash: md5
+  md5: d751713988987e9331980363e24189ce.dir
+  size: 0
+  nfiles: 0
