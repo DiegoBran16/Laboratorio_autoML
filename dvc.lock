@@ -1,0 +1,196 @@
+schema: '2.0'
+stages:
+  prepare_data:
+    cmd: python src/prepare_data.py
+    deps:
+    - path: data/data.csv
+      hash: md5
+      md5: 801f8030dad1df22a53edfdbfa4e80f0
+      size: 29981
+    - path: params.yaml
+      hash: md5
+      md5: 90c724d1e8b52a668284dddc3f74027b
+      size: 1860
+    - path: src/prepare_data.py
+      hash: md5
+      md5: 6409d9a9ef2fca62245faf5375227955
+      size: 1316
+    outs:
+    - path: data/X_test.csv
+      hash: md5
+      md5: 99000679fb3c8b7cf4f5898437efde3d
+      size: 17360
+    - path: data/X_train.csv
+      hash: md5
+      md5: 904b4c4ce46c99a0c94b72627091db3b
+      size: 69369
+    - path: data/y_test.csv
+      hash: md5
+      md5: f2beb563272525bcd1390a2523355ebf
+      size: 881
+    - path: data/y_train.csv
+      hash: md5
+      md5: a24b4cd1901a6add2c66f4dad6811bba
+      size: 3499
+  train_model:
+    cmd: python src/train_model.py
+    deps:
+    - path: data/X_train.csv
+      hash: md5
+      md5: 904b4c4ce46c99a0c94b72627091db3b
+      size: 69369
+    - path: data/y_train.csv
+      hash: md5
+      md5: a24b4cd1901a6add2c66f4dad6811bba
+      size: 3499
+    - path: params.yaml
+      hash: md5
+      md5: ae7a5d4ca7001a27e8ce0a8a3fb47fef
+      size: 2180
+    - path: src/train_model.py
+      hash: md5
+      md5: 1fd657344fc272671803c9058eafbce5
+      size: 1460
+    outs:
+    - path: models/train_model/
+      hash: md5
+      md5: e1cc3965dd2b390d0f7dfc4a00be6ec9.dir
+      size: 11767861
+      nfiles: 3
+  train_model_optuna:
+    cmd: python src/train_model_optuna.py
+    deps:
+    - path: data/X_test.csv
+      hash: md5
+      md5: 99000679fb3c8b7cf4f5898437efde3d
+      size: 17360
+    - path: data/X_train.csv
+      hash: md5
+      md5: 904b4c4ce46c99a0c94b72627091db3b
+      size: 69369
+    - path: data/y_test.csv
+      hash: md5
+      md5: f2beb563272525bcd1390a2523355ebf
+      size: 881
+    - path: data/y_train.csv
+      hash: md5
+      md5: a24b4cd1901a6add2c66f4dad6811bba
+      size: 3499
+    - path: params.yaml
+      hash: md5
+      md5: 90c724d1e8b52a668284dddc3f74027b
+      size: 1860
+    - path: src/train_model_optuna.py
+      hash: md5
+      md5: d84710924063976c82102e19ea7a902d
+      size: 4892
+    outs:
+    - path: metrics/optuna_results.csv
+      hash: md5
+      md5: 645bf76179f78630dfc93864f10f2fd6
+      size: 99
+    - path: metrics/optuna_study.pkl
+      hash: md5
+      md5: 4e0e732883002b06f2afbbb3128c0614
+      size: 172526
+    - path: models/optuna/best_model_optuna.pkl
+      hash: md5
+      md5: cf95aff2f50ba356c0f883127d7bc193
+      size: 1155
+  evaluate_model:
+    cmd: python src/evaluate_model.py
+    deps:
+    - path: data/X_test.csv
+      hash: md5
+      md5: 99000679fb3c8b7cf4f5898437efde3d
+      size: 17360
+    - path: data/y_test.csv
+      hash: md5
+      md5: f2beb563272525bcd1390a2523355ebf
+      size: 881
+    - path: models/
+      hash: md5
+      md5: 4080b8c28c4279684450466c8d77a770.dir
+      size: 48858
+      nfiles: 4
+    - path: src/evaluate_model.py
+      hash: md5
+      md5: 303b93af7c4f54a4050e3ddf20525df3
+      size: 1974
+    outs:
+    - path: metrics/results.csv
+      hash: md5
+      md5: d92b5a2116b58fe0555d76eac1731ee9
+      size: 198
+  train_rf:
+    cmd: python src/train_random_forest_optuna.py
+    deps:
+    - path: data/X_test.csv
+      hash: md5
+      md5: 99000679fb3c8b7cf4f5898437efde3d
+      size: 17360
+    - path: data/X_train.csv
+      hash: md5
+      md5: 904b4c4ce46c99a0c94b72627091db3b
+      size: 69369
+    - path: data/y_test.csv
+      hash: md5
+      md5: f2beb563272525bcd1390a2523355ebf
+      size: 881
+    - path: data/y_train.csv
+      hash: md5
+      md5: a24b4cd1901a6add2c66f4dad6811bba
+      size: 3499
+    - path: params.yaml
+      hash: md5
+      md5: 41eabf470e83f0f7f6b54e015771c59b
+      size: 1718
+    - path: src/train_random_forest_optuna.py
+      hash: md5
+      md5: 8d049e4e9dd94b35ce93ebc4fd73d716
+      size: 1869
+    outs:
+    - path: metrics/rf_results.csv
+      hash: md5
+      md5: 8617f2c5b10b1445e9a9fc01f968c063
+      size: 70
+    - path: models/optuna/best_rf_model_optuna.pkl
+      hash: md5
+      md5: 215efd858cf604c146cb5aa98bc71398
+      size: 45905
+  train_gb:
+    cmd: python src/train_gradient_boosting_optuna.py
+    deps:
+    - path: data/X_test.csv
+      hash: md5
+      md5: 99000679fb3c8b7cf4f5898437efde3d
+      size: 17360
+    - path: data/X_train.csv
+      hash: md5
+      md5: 904b4c4ce46c99a0c94b72627091db3b
+      size: 69369
+    - path: data/y_test.csv
+      hash: md5
+      md5: f2beb563272525bcd1390a2523355ebf
+      size: 881
+    - path: data/y_train.csv
+      hash: md5
+      md5: a24b4cd1901a6add2c66f4dad6811bba
+      size: 3499
+    - path: params.yaml
+      hash: md5
+      md5: 41eabf470e83f0f7f6b54e015771c59b
+      size: 1718
+    - path: src/train_gradient_boosting_optuna.py
+      hash: md5
+      md5: fcd2f799fc4d605786abfa597132df7b
+      size: 2041
+    outs:
+    - path: metrics/gb_results.csv
+      hash: md5
+      md5: b9e3f46685f96eb75a4df85329719589
+      size: 108
+    - path: models/optuna/best_gb_model_optuna.pkl
+      hash: md5
+      md5: f9a636308e1074c35910984deabe9ef6
+      size: 41532
